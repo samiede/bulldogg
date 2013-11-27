@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Bulldog</string>
+    <string name="action_settings">Settings</string>
+    <string name="autonom">Autonome Steuerung</string>
+    <string name="selbst">Selbst Steuern</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+	<string name="straf">Strafzeit!</string>
+	<string name="links">links</string>
+    <string name="rechts">rechts</string>
+    <string name="vor">vor</string>
+    <string name="zurueck">zurück</string>
+    <string name="verbinden">Connect</string>
+    
+</resources>
