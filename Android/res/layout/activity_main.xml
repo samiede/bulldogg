@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/autonom" />
+        android:text="@string/autonom"
+        android:onClick="autonom" />
 
     <Button
         android:id="@+id/btn_selbst"
@@ -24,7 +25,8 @@
         android:layout_above="@+id/btn_autonom"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="66dp"
-        android:text="@string/selbst" />
+        android:text="@string/selbst"
+        android:onClick="selbst" />
 
     <Button
         android:id="@+id/btn_connect"
@@ -33,6 +35,7 @@
         android:layout_below="@+id/btn_autonom"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp" 
-        android:text="@string/verbinden" />
+        android:text="@string/verbinden" 
+        android:onClick="connect"/>
 
 </RelativeLayout>
