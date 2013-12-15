@@ -112,7 +112,47 @@ public class AcitivtySelbst extends Activity implements SensorEventListener {
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
-		acceleration.setText("X: "+ event.values[0]+ " \nY: " + event.values[1] + "\nZ: "+event.values[2]);
+		int x,y;
+		char c = 'k';
+		String temp; 
+		
+		x = (int) (event.values[0] *10);
+		y = (int) (event.values[1] *10);
+		
+		if ( x < 0 && y < 0) {
+			c = 'b';
+			x = -x;
+			y = -y;
+		}
+		else if (x < 0) {
+			c = 'x';
+			x = -x;
+		}
+		else if (y < 0){
+			c = 'y';
+			y = -y;
+		}
+				
+		if (x < 10 & y < 10) temp = ""+c+"0"+x+"0"+y;
+		else if (y < 10) temp = ""+c+""+x+"0"+y;
+		else if (x < 10) temp = ""+c+"0"+x+""+y;
+		else temp = ""+c+""+x+""+y;
+		
+		
+		acceleration.setText("X: "+ x + " \nY: " + y + "\nZ: "+event.values[2]+"\nTemp:"+temp);
+		
+		
+		try {
+				
+    		PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())),true);
+    		out.println(temp);
+        } catch (UnknownHostException e) {
+    		e.printStackTrace();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
 		
 	}
     class ClientThread implements Runnable {
